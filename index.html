@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daivakrupa Krupa - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: 'Poppins', sans-serif; }
+    body { background-color: #0d0d0d; color: #fff; }
+    header { position: fixed; top: 0; width: 100%; background: rgba(0, 0, 0, 0.9); display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; z-index: 1000; }
+    .logo { font-size: 2rem; color: #f9004d; font-weight: 800; animation: slideIn 2s ease infinite alternate; position: absolute; left: 0; top: 0; padding: 1rem; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav ul li a:hover { color: #f9004d; }
+
+    .hero {
+      height: 100vh;
+      background: url('https://i.pinimg.com/236x/7c/08/2f/7c082fb3bf7d41407dbc7ab0a3e960a1.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 80px;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+
+    .hero .content {
+      z-index: 2;
+      max-width: 900px;
+      animation: moveGreeting 3s ease-in-out infinite alternate;
+    }
+
+    .hero h1 { font-size: 3rem; color: #fff; animation: fadeInDown 2s ease; }
+    .hero h3 { font-size: 1.5rem; color: #ccc; animation: fadeInUp 2s ease 0.5s forwards; }
+    .hero p { font-size: 1.1rem; color: #bbb; animation: fadeIn 3s ease 1s forwards; }
+
+    section { padding: 100px 5% 60px; }
+    section h2 { font-size: 2.5rem; margin-bottom: 30px; color: #f9004d; text-align: center; }
+
+    .about p, .services p, .skills p, .projects p {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #1f1f1f;
+      border-radius: 10px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card i { font-size: 2.5rem; color: #f9004d; margin-bottom: 15px; }
+    .card h5 { font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
+    .card p { font-size: 1rem; color: #ddd; }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 30px rgba(249, 0, 77, 0.3);
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .contact input,
+    .contact textarea {
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      background: #2a2a2a;
+      color: #fff;
+    }
+    .contact button {
+      background: #f9004d;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+     .scroll-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 30px;
+      background: #f9004d;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .social a { margin: 0 10px; color: #fff; font-size: 1.2rem; transition: 0.3s; }
+    .social a:hover { color: #f9004d; }
+
+    footer {
+      background: #101010;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    footer p { color: #aaa; }
+
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideIn { from { transform: translateX(0); } to { transform: translateX(20px); } }
+    @keyframes moveGreeting { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">D</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Hello, I'm Daivakrupa Krupa</h1>
+      <h3>Welcome to my professional portfolio</h3>
+      <p>It's a pleasure meeting you. Let's turn your vision into impactful digital reality.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate designer and developer offering creative digital solutions with precision. With a strong background in graphic design, UI/UX, branding, and web development, I create visually stunning and functionally robust designs. My workflow blends innovation, strategy, and attention to detail to elevate every brand I work with. My expertise includes Adobe Creative Suite, HTML/CSS, WordPress, SEO optimization, and creating engaging user interfaces. I take pride in delivering timely, high-quality work tailored to meet each client's unique needs.</p>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Services</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-code"></i>
+        <h5>Website Development</h5>
+        <p>Custom responsive websites that bring your ideas to life and ensure a strong online presence.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-vector-square"></i>
+        <h5>UI/UX Design</h5>
+        <p>Intuitive and elegant designs focused on user experience and visual impact.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-pencil-ruler"></i>
+        <h5>Brand Identity</h5>
+        <p>Crafting unique visual identities including logos, color schemes, and brand guides.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-bullhorn"></i>
+        <h5>SEO & Marketing Assets</h5>
+        <p>Optimized content and graphics that drive traffic and boost engagement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-laptop-code"></i><h5>HTML, CSS</h5><p>Clean responsive code for modern layouts</p></div>
+      <div class="card"><i class="fab fa-adobe"></i><h5>Adobe Suite</h5><p>Photoshop, Illustrator, InDesign, After Effects expert</p></div>
+      <div class="card"><i class="fas fa-drafting-compass"></i><h5>Creative Strategy</h5><p>Innovative concepts tailored to client needs</p></div>
+      <div class="card"><i class="fas fa-search"></i><h5>SEO Optimization</h5><p>Search-friendly design and content strategies</p></div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-store"></i><h5>Fashion E-commerce</h5><p>25% sales boost through a responsive redesign</p></div>
+      <div class="card"><i class="fas fa-lightbulb"></i><h5>Startup Brand Identity</h5><p>Complete branding package that elevated market presence</p></div>
+      <div class="card"><i class="fas fa-rocket"></i><h5>Conversion Landing Page</h5><p>Lead generation increased by 40%</p></div>
+      <div class="card"><i class="fas fa-brush"></i><h5>Illustrated Campaign</h5><p>30% more social engagement through visuals</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="social">
+      <a href="https://github.com/Daivakrupa5" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/panditi-daivakrupa-b2567b26b" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://daivakrupa5.github.io/" target="_blank"><i class="fas fa-briefcase"></i></a>
+      <a href="mailto:daivakrupa515@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://findevery-0.blogspot.com/2023/03/welcome-home.html" target="_blank"><i class="fas fa-globe"></i></a>
+    </div>
+    <p>&copy; 2025 Daivakrupa Krupa. All Rights Reserved.</p>
+    <p><a href="#" onclick="window.print()" style="color:#f9004d; cursor: pointer;">Print My Portfolio</a></p>
+  </footer>
+</body>
+</html>
